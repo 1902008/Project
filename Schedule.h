@@ -9,51 +9,35 @@ class Schedule
 {   
 	//Private Variables  
 	private:
-		char stop;
-		string schedulingPlan;
+		char destinations;
+		string planByDeadline;
+		string planByMinimumFDR;
 
 	//Public Methods 
 	public:
-		//Methods for reading excel files
-		void readFDR();
-		void readBento();
 
 		//Methods for displaying stuffs relevant to main menu call
-		void showMainMenu();
 		void showAllFDR();
 		void showAllBento();
 		void showFDRCapacity();
-		void displaySort();
+		void DisplayFDRSort();
+		void DisplayBentoSort();
 		void showBentoDeadline(int);
 		void showBentoAssignment(string);
 
-		//Methods for sorting schedule 
-		void scheduleByDeadline(string, char, int, string, char, int);
-		void scheduleMinimumFDRs(string, char, int, string, char, int);
+		//Methods for sorting Bento into FDR
+		void scheduleBentoByDeadline(string, char, int, string, char, int);
+		void scheduleBentoByMinimumFDRs(string, char, int, string, char, int);
 
+		//Method for writing & saving Schedule plan back to excel 
+		void writeSaveSchedulingPlan();
 		
-		//Methods for manipulating data
-		void add();
-		void remove();
-		void edit();
-
-		//Method for writing Schedule plan to 
-		void writeSchedulingPlan();
-		
-
-		//Method for saving schedule into excel 
-		void SaveSchedulePlan(string, char, int, string, char, int);
-
 		//Method for displaying empty fdr
-		void EmptyFDR(int);
+		void showEmptyFDR(int);
 
-
-
-
-
-
-
-
+		//Method to call FDR's add delete and edit functions
+		void AddDeleteEditFDR();
+		void AddDeleteEditBento();
 
 };
 
