@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cctype> //library for isdigit() function
 using namespace std;
 
 int main()
@@ -63,7 +64,7 @@ int main()
 
     //MAIN MENU
     int UserOption = 0;
-    while (UserOption != 11) //do while loop
+    while (UserOption != 11) //do while loop)
     {
         system("cls");
         cout << "MAIN MENU:\n";
@@ -81,7 +82,12 @@ int main()
         cout << "Please enter your option:\n> ";
         cin >> UserOption;
 
-        //still having some errors when input characters instead.
+        if (!isdigit(UserOption)) //catch if user entered invalid input like characters (which causes infinite loop)
+        {
+            cin.clear();
+            cin.ignore(100, '\n'); //discards 100 characters from input stream
+        }
+
         switch (UserOption) //switch case between options
         {
         case 1:
@@ -188,13 +194,13 @@ int main()
             system("pause");
             break;
 
-        case 11:
+         case 11:
             system("cls");
             cout << "Thank you for using Group 10's FoodDeliveryRobot!\n";
             break;
 
         default:
-            cout << "Please enter correct option!\n";
+            cout << "\033[1;31mPlease enter correct option!\033[0m\n\n";
             system("pause");
             break;
         }
