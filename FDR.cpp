@@ -204,7 +204,7 @@ void FDR::editFDRDeadline(string fNameToEdit, int newFDeadline)
 #include "FDR.h"
 int main()
 {
-	FDR fdrManager("D:/School work/Y1T2/Object Oriented Programming/VS tutorial files/Projectcoding/FDR.txt");
+	FDR fdrManager("D:/School work/Y1T2/Object Oriented Programming/VS tutorial files/Projectcoding/FDR.txt"); //need to format FDR.txt with comma after each variable 
 	fdrManager.addFDR("FDRXX", "12", "stop CASS", 1000);
 	fdrManager.showFDR();
 	fdrManager.editFDRCap("FDRXX", "10");
