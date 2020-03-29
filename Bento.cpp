@@ -171,7 +171,7 @@ void Bento::editBento(string bNameToEdit, int newBdeadline)
 #include "Bento.h"
 int main()
 {
-	Bento bentoManager("D:/School work/Y1T2/Object Oriented Programming/VS tutorial files/Projectcoding/bentos.txt");
+	Bento bentoManager("D:/School work/Y1T2/Object Oriented Programming/VS tutorial files/Projectcoding/bentos.txt"); //need to format bentos.txt with comma after each variable 
 	bentoManager.addBento("BentoXX", "stop CASS", 1000);
 	bentoManager.showBento();
 	bentoManager.editBento("BentoXX", "Stop CAS");
